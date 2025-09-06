@@ -1,0 +1,287 @@
+<!DOCTYPE html> 
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ayushi Gupta</title>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Orbitron:wght@400;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+<style>
+  /* Global Styles */
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+  }
+
+  body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #ffffff;
+    color: #556b2f;
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, h4 {
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #556b2f;
+  }
+
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+
+  /* Navbar */
+  nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px;
+    background: rgba(0, 0, 0, 0.03);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 0 10px rgba(85,107,47,0.2);
+  }
+
+  nav .logo {
+    font-size: 24px;
+    font-weight: 700;
+    color: #556b2f;
+  }
+
+  nav ul {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+  }
+
+  nav ul li a {
+    font-weight: 500;
+    padding: 5px 0;
+    position: relative;
+  }
+
+  nav ul li a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -3px;
+    width: 0%;
+    height: 2px;
+    background: #556b2f;
+    transition: 0.3s;
+  }
+
+  nav ul li a:hover::after {
+    width: 100%;
+  }
+
+  /* Hero Section */
+  .hero {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100vh;
+    padding: 0 50px;
+    background: #f9f9f9;
+    gap: 50px;
+  }
+
+  .hero-text {
+    max-width: 600px;
+    text-align: center;       
+    transform: translateX(120px); 
+  }
+
+  .hero .name {
+    font-family: 'Cinzel', serif;
+    font-size: 60px;
+    margin-bottom: 10px;
+    letter-spacing: 2px;
+  }
+
+  .hero .title {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 36px;
+    margin-bottom: 20px;
+  }
+
+  .hero p {
+    font-size: 20px;
+    margin-bottom: 40px;
+  }
+
+  .hero .btn {
+    padding: 15px 30px;
+    background: #556b2f;
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    font-weight: 600;
+    cursor: pointer;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+  }
+
+  .hero .btn:hover {
+    background: #6b8e23;
+    transform: scale(1.05);
+  }
+
+  .hero-image {
+    transform: translate(-90px, -30px); 
+  }
+
+  .hero-image img {
+    max-width: 400px;
+    width: 100%;
+    border-radius: 20px;
+    padding: 10px; 
+    border: 5px solid #556b2f; 
+    box-shadow: 0 0 20px rgba(85,107,47,0.4);
+    background: #f9f9f9; 
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+
+  .hero-image img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 30px rgba(85,107,47,0.6);
+  }
+
+  /* Portfolio Section */
+  .projects {
+    padding: 80px 50px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 40px;
+    background: #ffffff;
+  }
+
+  .card {
+    background: #f4f4f4;
+    border-radius: 20px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 0 10px rgba(85,107,47,0.2);
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+
+  .card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 0 20px rgba(85,107,47,0.4);
+  }
+
+  .card img {
+    width: 100%;
+    max-width: 300px; /* limit image size */
+    display: block;
+    margin: 0 auto 15px auto; /* center image in card */
+    border-radius: 15px;
+  }
+
+  .card h3 {
+    margin-bottom: 10px;
+  }
+
+  /* Footer */
+  footer {
+    padding: 40px 50px;
+    text-align: center;
+    color: #556b2f;
+    background: #f9f9f9;
+  }
+
+  /* Responsive */
+  @media(max-width: 1024px){
+    .hero {
+      flex-direction: column;
+      text-align: center;
+    }
+
+    .hero-image img {
+      max-width: 300px;
+      padding: 8px;
+      border-width: 4px;
+      margin-top: 30px;
+    }
+
+    .hero .name {
+      font-size: 50px;
+    }
+  }
+
+  @media(max-width: 768px){
+    nav {
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    .hero .name {
+      font-size: 40px;
+    }
+
+    .hero .title {
+      font-size: 28px;
+    }
+
+    .hero p {
+      font-size: 18px;
+    }
+
+    .hero-image img {
+      max-width: 250px;
+      padding: 6px;
+      border-width: 3px;
+    }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="logo">^_^</div>
+  <ul>
+    <li><a href="index.html">About</a></li>
+    <li><a href="projects.html">Projects</a></li>
+    <li><a href="specializations.html">Specializations</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<section class="projects" id="projects">
+  <div class="card">
+    <a href="https://github.com/agbla17/Spotify---c" target="_blank">
+      <img src="mune.png" alt="Project 1">
+      <h3>Mune</h3>
+      <p>Built a full-stack music streaming application simulating Spotify’s interface. Implemented authentication, playback UI, and local storage using XAMPP.</p>
+    </a>
+  </div>
+
+  <div class="card">
+    <a href="https://agbla17.github.io/NextGen-Inverters/" target="_blank">
+      <img src="website.png" alt="Project 2">
+      <h3>NextGen Inverters</h3>
+      <p>Created visually engaging designs to support the brand’s marketing initiatives. Developed the brand’s website using HTML and CSS.
+</p>
+    </a>
+  </div>
+
+  <div class="card">
+    <a href="https://github.com/agbla17/Ticket-Management-System" target="_blank">
+      <img src="ticket.gif" alt="Project 3">
+      <h3>Ticket Management System</h3>
+      <p> Implemented class-based ticket prioritization and dynamic fare calculation using data structures for Train Booking.</p>
+    </a>
+  </div>
+</section>
+
+<footer id="contact">
+  &copy; 2025 Ayushi Gupta. All rights reserved.
+</footer>
+
+</body>
+</html>
