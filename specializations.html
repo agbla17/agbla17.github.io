@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ayushi Gupta - Projects</title>
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Orbitron:wght@400;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+  <style>
+    /* Global Styles */
+    * { margin:0; padding:0; box-sizing:border-box; scroll-behavior:smooth; }
+
+    body { 
+      font-family:'Poppins', sans-serif; 
+      background:#ffffff; 
+      color:#556b2f; 
+      overflow-x:hidden; 
+    }
+
+    h1, h2, h3, h4 { 
+      text-transform:uppercase; 
+      letter-spacing:1px; 
+      color:#556b2f; 
+    }
+
+    a { text-decoration:none; color:inherit; }
+
+    /* Navbar */
+    nav {
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      padding:15px 30px;
+      background:#ffffff;
+      position:sticky;
+      top:0;
+      z-index:1000;
+      box-shadow:0 2px 8px rgba(0,0,0,0.1);
+      flex-wrap:wrap; /* ✅ match index.html */
+    }
+
+    nav .logo { font-size:22px; font-weight:700; color:#556b2f; }
+
+    nav ul { display:flex; list-style:none; gap:25px; }
+
+    nav ul li a { 
+      font-weight:500; 
+      padding:5px 0; 
+      position:relative; 
+      transition:color 0.3s ease; 
+    }
+
+    nav ul li a:hover { color:#6b8e23; }
+
+    nav ul li a::after {
+      content:''; 
+      position:absolute; 
+      left:0; 
+      bottom:-3px;
+      width:0%; 
+      height:2px; 
+      background:#556b2f;
+      transition:width 0.3s ease;
+    }
+
+    nav ul li a:hover::after { width:100%; }
+
+    /* Hamburger */
+    .menu-toggle { 
+      display:none; 
+      font-size:26px; /* ✅ match index.html */ 
+      cursor:pointer; 
+    }
+
+    @media(max-width:600px){ /* ✅ match index.html */
+      .menu-toggle { display:block; }
+      nav ul {
+        display:none;
+        flex-direction:column;
+        width:100%;
+        gap:15px;
+        margin-top:10px;
+      }
+      nav ul.show { display:flex; }
+    }
+
+    /* Projects Section */
+    .projects {
+      padding:80px 50px;
+      display:grid;
+      grid-template-columns:repeat(auto-fit, minmax(280px, 1fr));
+      gap:40px;
+      background:#ffffff;
+    }
+
+    .card {
+      background:#f4f4f4;
+      border-radius:20px;
+      padding:20px;
+      text-align:center;
+      box-shadow:0 0 10px rgba(85,107,47,0.2);
+      transition:transform 0.3s, box-shadow 0.3s;
+    }
+
+    .card:hover {
+      transform:translateY(-10px);
+      box-shadow:0 0 20px rgba(85,107,47,0.4);
+    }
+
+    .card img {
+      width:100%;
+      max-width:300px;
+      display:block;
+      margin:0 auto 15px auto;
+      border-radius:15px;
+    }
+
+    .card h3 { margin-bottom:10px; }
+
+    /* Footer */
+    footer {
+      padding:40px 50px;
+      text-align:center;
+      color:#556b2f;
+      background:#f9f9f9;
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <div class="logo">^_^</div>
+    <div class="menu-toggle">&#9776;</div>
+    <ul>
+      <li><a href="index.html">About</a></li>
+      <li><a href="projects.html">Projects</a></li>
+      <li><a href="specializations.html">Specializations</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+
+  <section class="projects" id="projects">
+    <div class="card">
+      <a href="https://www.linkedin.com/learning/certificates/ab7dfd02339652603e6c3cca18d739b6b854eb59c300a0760154a7f6f0e72752" target="_blank">
+        <img src="Cybersec_AyushiG.jpeg" alt="Project 1">
+        <h3>Career Essentials in Cybersecurity by Microsoft and LinkedIn</h3>
+        <p>.</p>
+      </a>
+    </div>
+
+    <div class="card">
+      <a href="#">
+        <img src="In_progress.gif" alt="Project 2">
+        <h3>Full Stack</h3>
+        <p>.</p>
+      </a>
+    </div>
+
+    <div class="card">
+      <a href="#">
+        <img src="In_progress.gif" alt="Project 3">
+        <h3>Cloud Computing</h3>
+        <p></p>
+      </a>
+    </div>
+  </section>
+
+  <footer id="contact">
+    &copy; 2025 Ayushi Gupta. All rights reserved.
+  </footer>
+
+  <script>
+    const toggle = document.querySelector(".menu-toggle");
+    const navLinks = document.querySelector("nav ul");
+    toggle.addEventListener("click", () => {
+      navLinks.classList.toggle("show");
+    });
+  </script>
+
+</body>
+</html>
