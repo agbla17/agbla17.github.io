@@ -1,132 +1,156 @@
 <!DOCTYPE html>
-
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Contact - Ayushi Gupta</title>
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Orbitron:wght@400;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact - Ayushi Gupta</title>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Orbitron:wght@400;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 
-  <style>
-    * { margin:0; padding:0; box-sizing:border-box; }
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; scroll-behavior:smooth; }
+  body { font-family:'Poppins',sans-serif; background:#fff; color:#556b2f; overflow-x:hidden; }
+  h1,h2,h3,h4 { text-transform:uppercase; letter-spacing:1px; color:#556b2f; }
+  a { text-decoration:none; color:inherit; }
 
-    body {
-      font-family:'Poppins',sans-serif;
-      background:#f9f9f9;
-      color:#556b2f;
-    }
+  /* Navbar */
+  nav {
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:15px 30px;
+    background:#ffffff;
+    position:sticky;
+    top:0;
+    z-index:1000;
+    box-shadow:0 2px 8px rgba(0,0,0,0.1);
+    flex-wrap:wrap;
+  }
+  nav .logo { font-size:22px; font-weight:700; color:#556b2f; }
+  nav ul { display:flex; list-style:none; gap:25px; }
+  nav ul li a {
+    font-weight:500;
+    padding:5px 0;
+    position:relative;
+    transition:color 0.3s ease;
+  }
+  nav ul li a:hover { color:#6b8e23; }
+  nav ul li a::after {
+    content:''; position:absolute; left:0; bottom:-3px;
+    width:0%; height:2px; background:#556b2f;
+    transition:width 0.3s ease;
+  }
+  nav ul li a:hover::after { width:100%; }
 
-    nav {
-      display:flex;
-      justify-content:space-between;
-      align-items:center;
-      padding:15px 30px;
-      background:#ffffff;
-      box-shadow:0 2px 8px rgba(0,0,0,0.1);
-    }
-    nav .logo { font-size:22px; font-weight:700; color:#556b2f; }
-    nav ul { display:flex; list-style:none; gap:25px; }
-    nav ul li a {
-      font-weight:500;
-      text-decoration:none;
-      color:#556b2f;
-      transition:color 0.3s ease;
-    }
-    nav ul li a:hover { color:#6b8e23; }
+  /* Hamburger */
+  .menu-toggle { display:none; font-size:26px; cursor:pointer; }
+  @media(max-width:600px){
+    .menu-toggle { display:block; }
+    nav ul { display:none; flex-direction:column; width:100%; gap:15px; margin-top:10px; }
+    nav ul.show { display:flex; }
+  }
 
-    .contact-section {
-      display:flex;
-      flex-direction:column;
-      align-items:center;
-      justify-content:center;
-      min-height:100vh;
-      padding:50px 20px;
-      background:#f9f9f9;
-    }
-    .contact-section h1 {
-      font-family:'Cinzel',serif;
-      font-size:clamp(28px,6vw,50px);
-      margin-bottom:15px;
-    }
-    .contact-section p {
-      margin-bottom:30px;
-      font-size:16px;
-      text-align:center;
-      max-width:600px;
-    }
-    .contact-form {
-      width:100%;
-      max-width:500px;
-      display:flex;
-      flex-direction:column;
-      gap:15px;
-    }
-    .contact-form input,
-    .contact-form textarea {
-      width:100%;
-      padding:12px 15px;
-      border:2px solid #556b2f;
-      border-radius:8px;
-      font-size:14px;
-      font-family:'Poppins',sans-serif;
-    }
-    .contact-form textarea {
-      min-height:120px;
-      resize:vertical;
-    }
-    .contact-form button {
-      padding:12px 25px;
-      background:#556b2f;
-      color:#fff;
-      border:none;
-      border-radius:10px;
-      font-weight:600;
-      cursor:pointer;
-      text-transform:uppercase;
-      transition:all 0.3s ease;
-      font-size:14px;
-    }
-    .contact-form button:hover {
-      background:#6b8e23;
-      transform:scale(1.05);
-    }
+  /* Contact Section */
+  .contact-section {
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    min-height:100vh;
+    padding:50px 20px;
+    text-align:center;
+    background:#f9f9f9;
+  }
+  .contact-section h1 {
+    font-family:'Cinzel',serif;
+    font-size:clamp(28px,6vw,50px);
+    margin-bottom:15px;
+  }
+  .contact-section p {
+    margin-bottom:30px;
+    font-size:clamp(14px,2.5vw,18px);
+    max-width:600px;
+  }
 
-    footer {
-      padding:20px;
-      text-align:center;
-      background:#ffffff;
-      color:#556b2f;
-      font-size:14px;
-    }
-  </style>
+  /* Form */
+  .contact-form {
+    width:100%;
+    max-width:500px;
+    display:flex;
+    flex-direction:column;
+    gap:15px;
+  }
+  .contact-form input,
+  .contact-form textarea {
+    width:100%;
+    padding:12px 15px;
+    border:2px solid #556b2f;
+    border-radius:10px;
+    font-size:14px;
+    font-family:'Poppins',sans-serif;
+    transition:all 0.3s ease;
+  }
+  .contact-form input:focus,
+  .contact-form textarea:focus { border-color:#6b8e23; outline:none; }
+  .contact-form textarea { min-height:120px; resize:vertical; }
+  .contact-form button {
+    padding:12px 25px;
+    background:#556b2f;
+    color:#fff;
+    border:none;
+    border-radius:10px;
+    font-weight:600;
+    cursor:pointer;
+    text-transform:uppercase;
+    transition:all 0.3s ease;
+    font-size:14px;
+  }
+  .contact-form button:hover { background:#6b8e23; transform:scale(1.05); }
 
+  /* Footer */
+  footer {
+    padding:30px 20px;
+    text-align:center;
+    color:#556b2f;
+    background:#f9f9f9;
+    font-size:14px;
+  }
+</style>
 </head>
 <body>
 
-  <nav>
-    <div class="logo">^_^</div>
-    <ul>
-      <li><a href="index.html">About</a></li>
-      <li><a href="projects.html">Projects</a></li>
-      <li><a href="specializations.html">Specializations</a></li>
-      <li><a href="contact.html">Contact</a></li>
-    </ul>
-  </nav>
+<nav>
+  <div class="logo">^_^</div>
+  <div class="menu-toggle">&#9776;</div>
+  <ul>
+    <li><a href="index.html">About</a></li>
+    <li><a href="projects.html">Projects</a></li>
+    <li><a href="specializations.html">Specializations</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+</nav>
 
-  <section class="contact-section">
-    <h1>Contact Me</h1>
-    <p>Have a question, collaboration idea, or just want to say hi? Fill out the form below!</p>
-    <form class="contact-form">
-      <input type="text" name="name" placeholder="Your Name" required>
-      <input type="email" name="email" placeholder="Your Email" required>
-      <textarea name="message" placeholder="Your Message" required></textarea>
-      <button type="submit">Send Message</button>
-    </form>
-  </section>
+<section class="contact-section">
+  <h1>Contact Me</h1>
+  <p>Have a question, collaboration idea, or just want to say hi? Fill out the form below!</p>
+  <form class="contact-form">
+    <input type="text" name="name" placeholder="Your Name" required>
+    <input type="email" name="email" placeholder="Your Email" required>
+    <textarea name="message" placeholder="Your Message" required></textarea>
+    <button type="submit">Send Message</button>
+  </form>
+</section>
 
-  <footer>
-    &copy; 2025 Ayushi Gupta. All rights reserved.
-  </footer>
+<footer>
+  &copy; 2025 Ayushi Gupta. All rights reserved.
+</footer>
+
+<script>
+  const toggle = document.querySelector(".menu-toggle");
+  const navLinks = document.querySelector("nav ul");
+  toggle.addEventListener("click", () => {
+    navLinks.classList.toggle("show");
+  });
+</script>
 
 </body>
 </html>
